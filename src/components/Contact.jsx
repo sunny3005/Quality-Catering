@@ -40,7 +40,7 @@ export default function Contact() {
       '_Sent via Quality Catering website_',
     ].filter(Boolean).join('\n')
 
-    const waUrl = `https://wa.me/919014760259?text=${encodeURIComponent(lines)}`
+    const waUrl = `https://wa.me/918148236067?text=${encodeURIComponent(lines)}`
 
     // Must open synchronously — mobile browsers block window.open inside setTimeout
     window.open(waUrl, '_blank', 'noopener,noreferrer')
