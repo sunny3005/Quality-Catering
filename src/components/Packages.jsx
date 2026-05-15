@@ -89,14 +89,14 @@ function PackageCard({ pkg, index }) {
 
 export default function Packages() {
   return (
-    <section id="packages" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="packages" className="py-14 md:py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="section-tag">Our Offerings</span>
           <h2 className="section-title mb-4">

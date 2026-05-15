@@ -25,7 +25,7 @@ export default function Footer() {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <footer className="bg-charcoal pt-20 pb-0">
+    <footer className="bg-charcoal pt-14 md:pt-20 pb-16 md:pb-0">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/8">
           {/* Brand */}
@@ -109,7 +109,7 @@ export default function Footer() {
                 <FiPhone className="text-gold flex-shrink-0" /> 9543067600
               </a>
               <p className="flex items-center gap-3 text-sm text-white/45">
-                <FiMapPin className="text-gold flex-shrink-0" /> Chennai, Tamil Nadu
+                <FiMapPin className="text-gold flex-shrink-0" /> No 363 kathivakkam high road, ennore ,chennai 600057,Tamil Nadu
               </p>
             </div>
           </div>

@@ -35,7 +35,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-6 pt-24 pb-16 md:pt-32">
         <motion.p
           {...fadeUp(0)}
           className="text-[0.75rem] font-semibold tracking-[0.28em] uppercase text-gold-light mb-5"

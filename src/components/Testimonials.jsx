@@ -28,14 +28,14 @@ export default function Testimonials() {
   const t = testimonials[current]
 
   return (
-    <section className="py-24 bg-cream">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-14 md:py-24 bg-cream">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-14"
+          className="text-center mb-10 md:mb-14"
         >
           <span className="section-tag">Client Stories</span>
           <h2 className="section-title">

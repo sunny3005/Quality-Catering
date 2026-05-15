@@ -3,8 +3,8 @@ import { FaWhatsapp } from 'react-icons/fa'
 
 export default function CustomizationBanner() {
   return (
-    <section className="py-20 bg-gradient-to-br from-cream-dark via-cream to-[#f0e8d0] border-y border-gold/20">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-12 md:py-20 bg-gradient-to-br from-cream-dark via-cream to-[#f0e8d0] border-y border-gold/20">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

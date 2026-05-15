@@ -15,27 +15,54 @@ export default function Contact() {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
+  const packageLabels = {
+    basic: 'Basic Package',
+    mid: 'Mid-Level Package',
+    signature: 'Signature Package',
+    custom: 'Custom Package',
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     setLoading(true)
+
+    const lines = [
+      '🍽️ *New Catering Enquiry*',
+      '─────────────────────',
+      `👤 *Name:* ${form.name}`,
+      `📞 *Phone:* ${form.phone}`,
+      `🎉 *Event:* ${form.eventType}`,
+      `📅 *Date:* ${form.eventDate || 'Not specified'}`,
+      `👥 *Guests:* ${form.guests}`,
+      `📦 *Package:* ${packageLabels[form.package] || 'Not selected'}`,
+      form.message ? `💬 *Message:* ${form.message}` : '',
+      '─────────────────────',
+      '_Sent via Quality Catering website_',
+    ].filter(Boolean).join('\n')
+
+    const waUrl = `https://wa.me/919014760259?text=${encodeURIComponent(lines)}`
+
+    // Must open synchronously — mobile browsers block window.open inside setTimeout
+    window.open(waUrl, '_blank', 'noopener,noreferrer')
+
     setTimeout(() => {
       setLoading(false)
       setSubmitted(true)
-    }, 1200)
+    }, 800)
   }
 
   const inputCls =
     'w-full px-4 py-3 border-[1.5px] border-gray-200 rounded-lg font-inter text-[0.95rem] text-charcoal bg-white outline-none transition-all duration-200 focus:border-gold focus:shadow-[0_0_0_3px_rgba(201,168,76,0.12)] placeholder-gray-300'
 
   return (
-    <section id="contact" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="contact" className="py-14 md:py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="section-tag">Get in Touch</span>
           <h2 className="section-title mb-4">
@@ -46,7 +73,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-[1fr_1.6fr] gap-14 lg:gap-20 items-start">
+        <div className="grid md:grid-cols-[1fr_1.6fr] gap-8 md:gap-14 lg:gap-20 items-start">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -115,13 +142,21 @@ export default function Contact() {
                 <FiCheckCircle className="text-gold text-5xl mx-auto mb-4" />
                 <h3 className="font-playfair text-charcoal text-2xl mb-3">Thank You!</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We've received your enquiry and will contact you within a few hours.
+                  Your enquiry has been sent to us on WhatsApp! We'll reply shortly.
                   For urgent bookings, call us directly at{' '}
                   <a href="tel:8148236067" className="text-gold font-semibold">
                     8148236067
                   </a>
                   .
                 </p>
+                <a
+                  href="https://wa.me/918148236067"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-whatsapp mt-6 inline-flex"
+                >
+                  <FaWhatsapp className="text-lg" /> Open WhatsApp
+                </a>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">

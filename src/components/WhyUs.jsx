@@ -25,14 +25,14 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section className="py-24 bg-charcoal">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-14 md:py-24 bg-charcoal">
+      <div className="max-w-6xl mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-gold-light bg-gold/10 px-4 py-1 rounded-full border border-gold/20 mb-4">
             Why Quality Catering
