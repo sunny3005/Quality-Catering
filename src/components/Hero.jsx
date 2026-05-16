@@ -13,26 +13,23 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0d0603] via-[#1e0d07] to-[#2c1a0e]" />
-
-      {/* Warm radial accents */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gold/5 blur-3xl" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-amber-700/10 blur-3xl" />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full bg-gold/8 blur-2xl" />
-      </div>
-
-      {/* Subtle pattern */}
+      {/* Background photo — biryani/food */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C9A84C' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1920&q=80')`,
         }}
       />
 
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
+      {/* Dark overlay so text stays readable */}
+      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+
+      {/* Gold warm accent at bottom */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/40 to-transparent" />
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full bg-gold/8 blur-3xl" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-6 pt-24 pb-16 md:pt-32">

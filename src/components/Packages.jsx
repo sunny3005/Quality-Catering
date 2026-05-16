@@ -44,9 +44,6 @@ function PackageCard({ pkg, index }) {
         >
           {pkg.name}
         </h3>
-        <p className={`text-lg font-semibold font-inter ${isSig ? 'text-white/50' : 'text-gray-400'}`}>
-          Rs. ___/plate
-        </p>
       </div>
 
       {/* Items */}
